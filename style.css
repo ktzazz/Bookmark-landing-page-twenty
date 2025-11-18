@@ -1,5 +1,10 @@
 :root {
   --red: hsl(0, 94%, 66%);
   --blue: hsl(231, 69%, 60%);
-  --grey: hsl(229, 31%, 21%);
+  --grey: hsl(0, 0%, 97%);
+  --blue-950: hsl(229, 31%, 21%);
+  --font-size: 1.125em;
+  --weight400: 400;
+  --weight500: 500;
+  --font-family: "Rubik", sans-serif;
 }

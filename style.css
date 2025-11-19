@@ -20,6 +20,10 @@
 
 /* BASE */
 
+.inactive {
+  display: none;
+}
+
 .body {
   background-color: var(--grey);
   font-family: var(--font-family);
@@ -37,6 +41,16 @@
 
 .header__logo circle {
   fill: var(--blue);
+}
+
+.bookmark,
+.mobile__open path {
+  fill: var(--blue-950);
+}
+
+.nav__mobile {
+  background: transparent;
+  border: none;
 }
 
 .header__nav {
@@ -70,49 +84,4 @@
   font-weight: var(--Weight700);
   font-size: min(4vw, 1.5rem);
   text-transform: uppercase;
-}
-
-/* desktop */
-@media (min-width: 70em) {
-  .nav__mobile,
-  .mobile__social {
-    display: none;
-  }
-
-  .header__nav {
-    display: block;
-    position: static;
-    width: auto;
-    height: auto;
-    padding: 0;
-    transform: translateY(0%);
-    background-color: transparent;
-  }
-
-  .nav__list {
-    padding: 0;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .nav__item a {
-    padding: 0;
-    text-decoration: none;
-    color: var(--primary-color);
-    position: relative;
-    font-family: var(--Font);
-    font-weight: var(--Weight500);
-    font-size: var(--FontSize);
-  }
-
-  .nav__btn {
-    background-color: var(--red);
-    padding: 0.5rem 2rem;
-    border-radius: 0.5rem;
-    color: var(--grey);
-    border: none;
-    box-shadow: 0px 2px 1px 0px #6463634a;
-    text-transform: uppercase;
-  }
 }

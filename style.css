@@ -36,7 +36,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2.5rem 2rem; /* EXPECTING TO CHANGE */
 }
 
 .header__logo {
@@ -76,19 +76,25 @@
 .nav__list {
   list-style: none;
   display: flex;
-  gap: min(2vw, 0.7rem);
-  padding: 2.2rem 1rem;
-  justify-content: flex-end;
+  flex-direction: column;
+  padding: min(32%, 8rem) 2rem;
+  text-align: center;
 }
 
 .nav__item a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--grey);
   display: block;
   transition: 0.3s;
-  font-weight: var(--Weight700);
-  font-size: min(4vw, 1.5rem);
+  font-weight: 300;
+  font-size: min(7vw, 1.5rem);
   text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav__item {
+  border-block-start: 0.7px solid hsla(0, 0%, 97%, 0.3);
+  padding-block: 1.5rem;
 }
 
 /* MODULE */

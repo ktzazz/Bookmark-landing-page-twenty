@@ -83,18 +83,59 @@
 
 .nav__item a {
   text-decoration: none;
-  color: var(--grey);
   display: block;
-  transition: 0.3s;
   font-weight: 300;
-  font-size: min(7vw, 1.5rem);
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .nav__item {
   border-block-start: 0.7px solid hsla(0, 0%, 97%, 0.3);
   padding-block: 1.5rem;
+}
+
+.nav__btn {
+  background-color: transparent;
+  width: 100%;
+  font-weight: var(--weight500);
+  padding-block: 0.5rem;
+  border: 2px solid var(--grey);
+  border-radius: 5px;
+}
+
+.nav__btn:hover {
+  border-color: var(--red);
+}
+
+.nav__item a,
+.nav__btn {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+  font-size: min(7vw, 1.5rem);
+}
+
+.nav__item a:hover,
+.nav__btn:hover {
+  color: var(--red);
+}
+
+.mobile__social {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  fill: var(--white);
+  position: absolute;
+  bottom: min(6%, 4rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fb:hover,
+.x:hover {
+  fill: var(--red);
+}
+
+.mobile__social a {
+  text-decoration: none;
 }
 
 /* MODULE */

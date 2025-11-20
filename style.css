@@ -11,6 +11,8 @@
   --blue: hsl(231, 69%, 60%);
   --grey: hsl(0, 0%, 97%);
   --blue-950: hsl(229, 31%, 21%);
+  --background-menu: hsla(229, 31%, 21%, 0.97);
+  --white: hsl(0, 0%, 100%);
   --text-color: hsl(0, 0%, 64%);
   --font-size: 1.125em;
   --weight400: 400;
@@ -37,6 +39,10 @@
   padding: 1rem 2rem;
 }
 
+.header__logo {
+  z-index: 10;
+}
+
 .header__logo circle {
   fill: var(--blue);
 }
@@ -44,6 +50,10 @@
 .bookmark,
 .mobile__open path {
   fill: var(--blue-950);
+}
+
+.innerCircle {
+  fill: var(--white);
 }
 
 .nav__mobile {
@@ -54,11 +64,11 @@
 
 .header__nav {
   position: fixed;
-  height: min(24%, 15rem);
+  height: 100vh;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--blue-950);
+  background-color: var(--background-menu);
   transform: translateY(-100%);
   transition: transform 0.1s ease-in-out;
 }
@@ -91,4 +101,11 @@
 
 .open {
   transform: translateY(0);
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }

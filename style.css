@@ -20,10 +20,6 @@
 
 /* BASE */
 
-.inactive {
-  display: none;
-}
-
 .body {
   background-color: var(--grey);
   font-family: var(--font-family);
@@ -31,6 +27,8 @@
   height: 100vh;
   overflow-x: hidden;
 }
+
+/* LAYOUT */
 
 .header {
   display: flex;
@@ -51,6 +49,7 @@
 .nav__mobile {
   background: transparent;
   border: none;
+  z-index: 10;
 }
 
 .header__nav {
@@ -62,10 +61,6 @@
   background-color: var(--blue-950);
   transform: translateY(-100%);
   transition: transform 0.1s ease-in-out;
-}
-
-.open {
-  transform: translateY(0);
 }
 
 .nav__list {
@@ -84,4 +79,16 @@
   font-weight: var(--Weight700);
   font-size: min(4vw, 1.5rem);
   text-transform: uppercase;
+}
+
+/* MODULE */
+
+/* STATE */
+
+.inactive {
+  display: none;
+}
+
+.open {
+  transform: translateY(0);
 }

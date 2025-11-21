@@ -26,6 +26,7 @@ body {
   overflow-y: visible !important;
   height: auto !important;
   min-height: 100vh;
+  overflow-x: hidden !important;
 } /* FOR THE STICKY TO WORK */
 
 .body {

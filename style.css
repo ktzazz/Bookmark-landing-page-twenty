@@ -21,18 +21,35 @@
 }
 
 /* BASE */
+html,
+body {
+  /* Asegúrate de que el contenedor principal pueda scrollear */
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  height: auto !important;
+  min-height: 100vh; /* Para asegurar que hay espacio para el sticky */
+}
 
 .body {
   background-color: var(--grey);
   font-family: var(--font-family);
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
 }
 
 /* LAYOUT */
 
+/* header starts */
+
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background-color: var(--grey);
+  width: 100%;
+}
+
+.header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -137,6 +154,11 @@
 .mobile__social a {
   text-decoration: none;
 }
+/* header ends */
+
+.main {
+  padding-inline: 2rem;
+}
 
 /* MODULE */
 
@@ -149,10 +171,19 @@
 .open {
   transform: translateY(0);
 }
-
+/* 
 .no-scroll {
   overflow: hidden;
   position: fixed;
   width: 100%;
   height: 100%;
+}
+ */
+.no-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-y: scroll; /* Si el menú es más largo que la pantalla */
+  width: 100%;
 }

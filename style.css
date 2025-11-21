@@ -23,12 +23,10 @@
 /* BASE */
 html,
 body {
-  /* Asegúrate de que el contenedor principal pueda scrollear */
-  overflow-x: visible !important;
   overflow-y: visible !important;
   height: auto !important;
-  min-height: 100vh; /* Para asegurar que hay espacio para el sticky */
-}
+  min-height: 100vh;
+} /* FOR THE STICKY TO WORK */
 
 .body {
   background-color: var(--grey);
@@ -47,6 +45,7 @@ body {
   z-index: 1020;
   background-color: var(--grey);
   width: 100%;
+  transition: transform 0.3s ease-out;
 }
 
 .header__content {
@@ -171,18 +170,15 @@ body {
 .open {
   transform: translateY(0);
 }
-/* 
-.no-scroll {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
- */
+
 .no-scroll {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
+}
+
+.hidden {
+  transform: translateY(-100%);
 }

@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector(".header");
+
+  window.addEventListener("scroll", function () {
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+      // Scroll hacia abajo: oculta el menú
+      navbar.classList.add("hidden");
+    } else {
+      // Scroll hacia arriba: muestra el menú
+      navbar.classList.remove("hidden");
+    }
+    lastScrollTop = currentScrollTop;
+  });
+
   const navBtn = document.querySelector(".nav__mobile");
   const mobileOpen = document.querySelector(".mobile__open");
   const mobileClose = document.querySelector(".mobile__close");
@@ -8,10 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileOpen.classList.toggle("inactive");
     mobileClose.classList.toggle("inactive");
     mobileMenu.classList.toggle("open");
-
-    mobileClose.addEventListener("click", function (event) {
-      event.preventDefault();
-    });
 
     document.body.classList.toggle("no-scroll");
     logoColor();

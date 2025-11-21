@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileClose.classList.toggle("inactive");
     mobileMenu.classList.toggle("open");
 
-    document.body.classList.toggle("no-scroll");
     logoColor();
   }
 
@@ -46,10 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
       logo.style.fill = lightGray;
       circle.style.fill = lightGray;
       inner.style.fill = bgMenu;
+      mobileMenu.classList.add("no__scroll");
     } else {
       logo.style.fill = logoOg;
       circle.style.fill = circleOg;
       inner.style.fill = innerOg;
+      mobileMenu.classList.remove("no__scroll");
     }
   }
 

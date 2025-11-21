@@ -171,12 +171,8 @@ body {
   transform: translateY(0);
 }
 
-.no-scroll {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+.no__scroll {
+  touch-action: none;
 }
 
 .hidden {

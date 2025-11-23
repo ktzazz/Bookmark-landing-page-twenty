@@ -14,6 +14,7 @@
   --background-menu: hsla(229, 31%, 21%, 0.97);
   --white: hsl(0, 0%, 100%);
   --text-color: hsl(0, 0%, 64%);
+  --btn-color: hsl(0, 0%, 90%);
   --font-size: 1.125em;
   --weight400: 400;
   --weight500: 500;
@@ -86,7 +87,7 @@ body {
   width: 100%;
   background-color: var(--background-menu);
   transform: translateY(-100%);
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .nav__list {
@@ -155,10 +156,113 @@ body {
 }
 /* header ends */
 
+/* main starts */
 .main {
   padding-inline: 2rem;
   overflow-x: hidden;
 }
+
+.main__intro {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3rem;
+}
+
+.main__txt {
+  text-align: center;
+}
+
+.title {
+  font-size: min(8vw, 2rem);
+  font-weight: var(--weight500);
+  color: var(--blue-950);
+  margin-bottom: 1.5rem;
+}
+
+.p__gray {
+  color: var(--text-color);
+  font-size: min(5vw, 1rem);
+  font-weight: var(--weight400);
+  margin-bottom: 1.5rem;
+}
+
+.btn__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__btn,
+.main__btnF {
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0.8rem 0.9rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: var(--weight500);
+  letter-spacing: 1px;
+  box-shadow: 0px 3px 2px hsla(0, 0%, 0%, 0.123);
+  border: 2px solid transparent;
+}
+
+.main__btn {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.main__btnF {
+  background-color: var(--btn-color);
+  color: var(--blue-950);
+}
+
+.main__btn:hover,
+.main__btnF:hover,
+.main__btn:active,
+.main__btnF:active {
+  background-color: var(--grey);
+}
+
+.main__btn:hover,
+.main__btn:active {
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+
+.main__btnF:hover,
+.main__btnF:active {
+  color: var(--blue-950);
+  border: 2px solid var(--blue-950);
+}
+
+.main__img img {
+  display: block;
+  width: 95%;
+  height: 100%;
+  margin-inline: auto;
+}
+
+/* ellipse */
+
+.main__img {
+  position: relative;
+  width: 100vw;
+}
+
+.main__img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 80%;
+  height: 80%;
+  border-radius: 50% 0 0 50%;
+  background-color: var(--blue);
+}
+
+/* ellipse */
 
 /* MODULE */
 

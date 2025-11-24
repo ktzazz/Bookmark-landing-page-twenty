@@ -269,7 +269,6 @@ body {
 .section__features {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-block: 5rem;
 }
 
@@ -283,6 +282,66 @@ body {
 
 .features__intro {
   margin-block-end: 1.5rem;
+}
+
+.section__options {
+  display: flex;
+  flex-direction: column;
+}
+
+.off {
+  margin: 0;
+  font-size: min(6vw, 1rem);
+  color: var(--text-color);
+  font-weight: var(--weight500);
+  text-align: center;
+  width: 100%;
+  border-block-start: 2px solid var(--btn-color);
+  padding-block: 1.2rem;
+  cursor: pointer;
+}
+
+.on {
+  margin: 0;
+  font-size: min(6vw, 1rem);
+  font-weight: var(--weight500);
+  text-align: center;
+  width: 100%;
+  border-block-start: 2px solid var(--btn-color);
+  padding-block: 1.2rem;
+  cursor: pointer;
+  /* basic */
+  color: var(--blue-950);
+  position: relative;
+  box-sizing: border-box;
+}
+
+@keyframes redLine {
+  0% {
+    transform: scaleX(0) translateX(-50%);
+  }
+  100% {
+    transform: scaleX(1) translateX(-50%);
+  }
+}
+
+.on::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 45%;
+  height: 3px;
+  background-color: var(--red);
+  transform-origin: left;
+}
+
+.animate-in::after {
+  animation: redLine 0.5s ease-in-out forwards;
+}
+
+.section__tab:last-of-type {
+  border-block-end: 2px solid var(--btn-color);
 }
 
 /* MODULE */

@@ -55,4 +55,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   navBtn.addEventListener("click", toggleMobileMenu);
+
+  /* ANIMATION ON SCROLL */
+  const animation = document.querySelectorAll(".on");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Element is in the viewport, add the animation class
+          entry.target.classList.add("animate-in");
+          // Optionally, stop observing this element once it has animated
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  ); // Trigger when 50% of the element is visible
+
+  animation.forEach((element) => {
+    observer.observe(element);
+  });
 });

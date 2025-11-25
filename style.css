@@ -355,13 +355,14 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  margin-block-start: 4rem;
   gap: 3rem;
 }
 
 .section__pic img {
   display: block;
-  width: 85%;
-  height: 45vh;
+  width: 80%;
+  height: 85%;
   margin-inline: auto;
   object-fit: contain;
 }
@@ -369,7 +370,7 @@ body {
 .section__pic {
   position: relative;
   width: 100vw;
-  height: 45vh;
+  height: 37vh;
 }
 
 .section__pic::after {
@@ -379,7 +380,7 @@ body {
   left: 0;
   z-index: -1;
   width: 80%;
-  height: 75%;
+  height: 85%;
   border-radius: 0 50% 50% 0;
   background-color: var(--blue);
 }

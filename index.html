@@ -305,20 +305,39 @@
       </div>
     </div>
 
-    <a href="#" class="main__btn"> More Info </a>
-
-    <div class="subscription__container">
-
-      <p class="subscription__p"> 35,000+ already joined </p>
-
-      <h5 class="h5"> Stay up-to-date with what we’re doing </h5>
-
-      <input type="email" placeholder="Enter your email address">
-
-      <button type="submit" class="subscription__btn"> Contact Us </button>
+    <div class="faqs__btn">
+      <a href="#" class="main__btn"> More Info </a>
     </div>
 
   </main>
+
+  <div class="subscription__container">
+
+    <p class="subscription__p"> 35,000+ already joined </p>
+
+    <h6 class="h6"> Stay up-to-date with what we’re doing </h6>
+    <div class="mail__input">
+      <input autocomplete="email" id="email" type="email" placeholder="Enter your email address" class="sub__input">
+      <div class="input__error">
+        <svg class="icon__error" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <g fill="none" fill-rule="evenodd">
+            <circle cx="10" cy="10" r="10" fill="#FA5959" />
+            <g fill="#FFF" transform="translate(9 5)">
+              <rect width="2" height="7" rx="1" />
+              <rect width="2" height="2" y="8" rx="1" />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <span class="error__span .inactive">
+      <p class="error__msg"> Whoops, make sure it's an email </p>
+    </span>
+
+    <button type="submit" class="main__btn"> Contact Us </button>
+  </div>
+
 
   <footer class="footer">
 
@@ -358,6 +377,7 @@
     crossorigin="anonymous"></script>
 
   <script src="script.js"></script>
+
 
 </body>
 

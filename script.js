@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // nav bar scroll
+
   let lastScrollTop = 0;
   const navbar = document.querySelector(".header");
 
@@ -7,14 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
       window.pageYOffset || document.documentElement.scrollTop;
 
     if (currentScrollTop > lastScrollTop) {
-      // Scroll hacia abajo: oculta el menú
+      // Scroll down = hiddes menu
       navbar.classList.add("hidden");
     } else {
-      // Scroll hacia arriba: muestra el menú
+      // Scroll up = shows menu
       navbar.classList.remove("hidden");
     }
     lastScrollTop = currentScrollTop;
   });
+
+  // menu buttons and logo color change
 
   const navBtn = document.querySelector(".nav__mobile");
   const mobileOpen = document.querySelector(".mobile__open");
@@ -56,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navBtn.addEventListener("click", toggleMobileMenu);
 
-  /* ANIMATION ON SCROLL */
+  // line animation when scroll
+
   const animation = document.querySelectorAll(".on");
   const observer = new IntersectionObserver(
     (entries, observer) => {
@@ -75,4 +80,29 @@ document.addEventListener("DOMContentLoaded", function () {
   animation.forEach((element) => {
     observer.observe(element);
   });
+
+  // validates email
+
+  const emailInput = document.getElementById("email");
+  const emailDiv = document.querySelector(".mail__input");
+  const errorIcon = document.querySelector(".icon__error");
+  const errorMsg = document.querySelector(".error__div");
+  const contactBtn = document.querySelector("#contact__btn");
+
+  contactBtn.addEventListener("submit", validateEmail);
+
+  function validateEmail(event) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailInput.value)) {
+      emailDiv.classList.add("error__state");
+      errorIcon.classList.remove("inactive");
+      errorMsg.classList.remove("inactive");
+      event.preventDefault();
+    } else {
+      emailDiv.classList.remove("error__state");
+      errorIcon.classList.add("inactive");
+      errorMsg.classList.add("inactive");
+    }
+  }
 });

@@ -269,7 +269,7 @@ body {
 .section__features {
   display: flex;
   flex-direction: column;
-  margin-block: 5rem;
+  margin-block-start: 5rem;
 }
 
 .h2,
@@ -388,15 +388,14 @@ body {
 }
 
 .section__download {
-  margin-block-start: 4rem;
+  margin-block-start: 0rem !important;
 }
 
 .section__card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  margin-block-end: 8.5rem;
+  margin-block-end: min(6rem, 8.5rem);
 }
 
 .card__1,
@@ -475,8 +474,6 @@ body {
 .mail__input {
   width: 100%;
   margin-block-start: 1.5rem;
-  border: 2px solid transparent;
-  position: relative;
 }
 
 .sub__input {
@@ -511,6 +508,10 @@ body {
   border: 2px solid var(--red);
 }
 
+.form {
+  width: 100%;
+}
+
 /* MODULE */
 
 /* STATE */
@@ -531,39 +532,32 @@ body {
   transform: translateY(-100%);
 }
 
-.mail__input::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--red);
-  border-radius: 5px 5px 0 0;
+/* ERROR */
+
+.error__state {
+  border: 2.5px solid var(--red);
+  border-radius: 6px;
+  position: relative;
+  background-color: var(--red);
 }
 
-/* error */
-
 .icon__error {
+  content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 27%;
+  transform: translateY(-25%);
   right: 15px;
 }
 
-.error__span {
+.error__div {
   width: 100%;
   padding: 0.4rem;
   color: var(--white);
-  font-size: min(3vw, 0.6rem);
+  font-size: min(3vw, 0.7rem);
   font-weight: var(--weight500);
-  background-color: var(--red);
   font-style: italic;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-block-end: 1rem;
 }
 
-.error__span p {
+.error__div p {
   margin-bottom: 0 !important;
 }

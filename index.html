@@ -316,10 +316,12 @@
     <p class="subscription__p"> 35,000+ already joined </p>
 
     <h6 class="h6"> Stay up-to-date with what we’re doing </h6>
-    <div class="mail__input">
-      <input autocomplete="email" id="email" type="email" placeholder="Enter your email address" class="sub__input">
-      <div class="input__error">
-        <svg class="icon__error" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+    <form id="contact__btn" class="form" novalidate>
+      <div class="mail__input"> <!-- ADD .error__state HERE -->
+        <input autocomplete="email" id="email" type="email" placeholder="Enter your email address" class="sub__input">
+
+
+        <svg class="icon__error inactive" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
           <g fill="none" fill-rule="evenodd">
             <circle cx="10" cy="10" r="10" fill="#FA5959" />
             <g fill="#FFF" transform="translate(9 5)">
@@ -328,16 +330,19 @@
             </g>
           </g>
         </svg>
+
+
+        <div class="error__div inactive">
+          <p class="error__msg"> Whoops, make sure it's an email </p>
+        </div>
+
       </div>
-    </div>
 
-    <span class="error__span .inactive">
-      <p class="error__msg"> Whoops, make sure it's an email </p>
-    </span>
 
-    <button type="submit" class="main__btn"> Contact Us </button>
+
+      <button type="submit" class="main__btn"> Contact Us </button>
   </div>
-
+  </form>
 
   <footer class="footer">
 

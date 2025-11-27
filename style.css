@@ -347,6 +347,10 @@ body {
   border-block-end: 2px solid var(--btn-color);
 }
 
+.section__tab:hover {
+  color: var(--blue-950);
+}
+
 /* section's options txts */
 
 .section__txt .main__btn {
@@ -510,6 +514,67 @@ body {
 
 .form {
   width: 100%;
+}
+
+.footer {
+  padding-block-start: 3rem;
+  background-color: var(--blue-950);
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.footer__p {
+  color: var(--grey);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+  font-size: min(7vw, 1rem);
+  font-weight: var(--weight400);
+}
+
+.footer__p:hover {
+  color: var(--red);
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  fill: var(--grey);
+}
+
+.attribution {
+  margin-block: 0 !important;
+  padding-block: 2rem 0.5rem;
+  color: var(--grey);
+}
+
+.attribution a {
+  color: var(--red) !important;
+}
+
+.attribution a:hover {
+  color: var(--white) !important;
+}
+
+.txt__Lfooter {
+  fill: var(--grey);
 }
 
 /* MODULE */

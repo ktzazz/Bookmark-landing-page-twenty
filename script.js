@@ -62,24 +62,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // line animation when scroll
 
-  const animation = document.querySelectorAll(".on");
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Element is in the viewport, add the animation class
-          entry.target.classList.add("animate-in");
-          // Optionally, stop observing this element once it has animated
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  ); // Trigger when 50% of the element is visible
+  function animated() {
+    const animation = document.querySelectorAll(".on");
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Element is in the viewport, add the animation class
+            entry.target.classList.add("animate-in");
+            // Optionally, stop observing this element once it has animated
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); // Trigger when 50% of the element is visible
 
-  animation.forEach((element) => {
-    observer.observe(element);
-  });
+    animation.forEach((element) => {
+      observer.observe(element);
+    });
+  }
 
   // validates email
 
@@ -105,4 +107,26 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMsg.classList.add("inactive");
     }
   }
+
+  // features options
+
+  const optionTab = document.querySelectorAll(".section__tab");
+  const optionTxt = document.querySelectorAll(".section__txt");
+
+  let currentTab = 0;
+  animated();
+
+  optionTab.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      if (index !== currentTab) {
+        optionTab[currentTab].classList.remove("on");
+        optionTab[currentTab].classList.add("off");
+        optionTab[index].classList.add("on");
+        optionTxt[currentTab].classList.toggle("inactive");
+        optionTxt[index].classList.toggle("inactive");
+        currentTab = index;
+        animated();
+      }
+    });
+  });
 });

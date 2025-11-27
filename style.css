@@ -349,6 +349,7 @@ body {
 
 .section__tab:hover {
   color: var(--blue-950);
+  transition: color 0.3s ease-in-out;
 }
 
 /* section's options txts */
@@ -441,6 +442,8 @@ body {
   padding-inline: 2rem;
 }
 
+/* section ends */
+
 .faqs {
   margin-block-start: 3rem;
 }
@@ -451,6 +454,10 @@ body {
   align-items: center;
   margin-block: 3rem 6rem;
 }
+
+/* bootstrap */
+
+/* bootstrap */
 
 .subscription__container {
   display: flex;

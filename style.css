@@ -291,24 +291,24 @@ body {
 }
 
 .off {
-  margin: 0;
+  margin: 0 !important;
   font-size: min(6vw, 1rem);
   color: var(--text-color);
   font-weight: var(--weight500);
   text-align: center;
   width: 100%;
-  border-block-start: 2px solid var(--btn-color);
+  border-block-start: 1px solid var(--btn-color);
   padding-block: 1.2rem;
   cursor: pointer;
 }
 
 .on {
-  margin: 0;
+  margin: 0 !important;
   font-size: min(6vw, 1rem);
   font-weight: var(--weight500);
   text-align: center;
   width: 100%;
-  border-block-start: 2px solid var(--btn-color);
+  border-block-start: 1px solid var(--btn-color);
   padding-block: 1.2rem;
   cursor: pointer;
   /* basic */
@@ -344,7 +344,7 @@ body {
 }
 
 .section__tab:last-of-type {
-  border-block-end: 2px solid var(--btn-color);
+  border-block-end: 1px solid var(--btn-color);
 }
 
 .section__tab:hover {

@@ -457,6 +457,47 @@ body {
 
 /* bootstrap */
 
+.faqs .accordion-button {
+  background-color: var(--grey);
+  font-size: min(4vw, 0.97rem);
+  padding: 1.5rem 0 1rem 0;
+}
+
+.faqs .accordion-button:not(.collapsed) {
+  color: var(--blue-950);
+  background-color: var(--grey);
+  box-shadow: none;
+}
+
+.faqs .accordion-button:focus {
+  z-index: 3;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+}
+
+.faqs .accordion-flush .accordion-collapse {
+  color: var(--text-color);
+  background-color: var(--grey);
+  font-size: min(4vw, 0.97rem);
+}
+
+.faqs .accordion-body {
+  padding: 1rem 0 2rem 0;
+}
+
+.faqs .accordion-button:not(.collapsed)::after {
+  background-image: url("images/icon-arrow-after.svg");
+}
+
+.faqs .accordion-button::after {
+  background-image: url("images/icon-arrow.svg");
+}
+
+.faqs .accordion-flush .accordion-item:last-child {
+  border-bottom: 1px solid var(--btn-color);
+}
+
 /* bootstrap */
 
 .subscription__container {

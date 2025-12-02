@@ -185,7 +185,7 @@ body {
   color: var(--text-color);
   font-size: min(5vw, 0.97rem);
   font-weight: var(--weight400);
-  margin-bottom: 1.5rem;
+  margin-block-end: 1.5rem;
   text-align: center;
 }
 
@@ -585,7 +585,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--grey);
-  font-size: min(7vw, 1rem);
+  font-size: min(7vw, 0.9rem);
   font-weight: var(--weight400);
 }
 
@@ -624,8 +624,6 @@ body {
 .txt__Lfooter {
   fill: var(--grey);
 }
-
-/* MODULE */
 
 /* STATE */
 
@@ -673,4 +671,76 @@ body {
 
 .error__div p {
   margin-bottom: 0 !important;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 47.5em) {
+  .p__gray:not(.section__card .p__gray) {
+    margin-block-end: 2rem;
+    width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .section__card .p__gray {
+    width: 75%;
+  }
+
+  .btn__container {
+    justify-content: space-around;
+  }
+
+  .section__pic::after {
+    width: 70%;
+    height: 85%;
+  }
+
+  .section__download .section__card {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+    gap: 2rem;
+    margin-block-start: 2rem;
+  }
+
+  .card__1 {
+    grid-area: 1 / 1 / span 2 / span 2;
+  }
+
+  .card__2 {
+    grid-area: 1 / 3 / span 2 / span 2;
+  }
+
+  .card__3 {
+    grid-area: 3 / 2 / span 2 / span 2;
+  }
+
+  .faqs {
+    width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mail__input,
+  .subscription__container .main__btn {
+    width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    gap: 0;
+  }
+
+  .footer__list {
+    flex-direction: row;
+    margin-inline-end: 3.5rem;
+  }
 }

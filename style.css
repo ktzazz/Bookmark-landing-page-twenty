@@ -377,7 +377,7 @@ body {
 .section__pic {
   position: relative;
   width: 100vw;
-  height: 35vh;
+  height: min(35vh, 295px);
 }
 
 .section__pic::after {
@@ -585,7 +585,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--grey);
-  font-size: min(7vw, 0.9rem);
+  font-size: min(5vw, 0.9rem);
   font-weight: var(--weight400);
 }
 
@@ -675,7 +675,11 @@ body {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 47.5em) {
+@media (min-width: 37.5em) {
+  /* .section__pic {
+    height: /* min(35vh, 500px); min(100%, 550px);
+  } */
+
   .p__gray:not(.section__card .p__gray) {
     margin-block-end: 2rem;
     width: 75%;
@@ -692,9 +696,13 @@ body {
     justify-content: space-around;
   }
 
+  .section__pic {
+    height: min(90vh, 400px);
+  }
+
   .section__pic::after {
     width: 70%;
-    height: 85%;
+    height: 80%;
   }
 
   .section__download .section__card {
@@ -741,6 +749,10 @@ body {
 
   .footer__list {
     flex-direction: row;
-    margin-inline-end: 3.5rem;
+    margin-inline-end: min(1vw, 3.5rem);
+    align-self: flex-end;
   }
+}
+
+@media (min-width: 60em) {
 }

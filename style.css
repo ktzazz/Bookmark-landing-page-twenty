@@ -676,11 +676,7 @@ body {
 /* MEDIA QUERIES */
 
 @media (min-width: 37.5em) {
-  /* .section__pic {
-    height: /* min(35vh, 500px); min(100%, 550px);
-  } */
-
-  .p__gray:not(.section__card .p__gray) {
+  .p__gray {
     margin-block-end: 2rem;
     width: 75%;
     position: relative;
@@ -689,7 +685,7 @@ body {
   }
 
   .section__card .p__gray {
-    width: 75%;
+    transform: translateX(-66%);
   }
 
   .btn__container {
@@ -783,7 +779,7 @@ body {
     flex-direction: row;
     padding: 0;
     justify-content: flex-end;
-    gap: 3.5rem;
+    gap: 3rem;
     align-items: center;
   }
 
@@ -799,7 +795,7 @@ body {
 
   .nav__item a,
   .nav__btn {
-    font-size: min(6vw, 0.9rem);
+    font-size: min(6vw, 0.8rem);
   }
 
   .nav__btn {
@@ -820,24 +816,38 @@ body {
   }
 
   .main {
+    margin-block-start: 4rem;
     padding-inline: 0;
   }
 
   .main__intro {
     flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .main__img {
+    width: min(100%, 80rem);
   }
 
   .main__txt {
     text-align: left;
+    margin-inline-start: 10%;
+    margin-block-start: 5%;
+    width: min(70%, 55rem);
   }
 
   .title {
     text-align: left;
+    font-size: min(3.5vw, 3rem);
   }
 
-  .p__gray:not(.section__card .p__gray) {
-    width: auto;
-    position: relative;
+  .p__gray {
+    font-size: min(1.5vw, 1.2rem);
+  }
+
+  .main__txt .p__gray {
+    width: 100%;
     left: auto;
     transform: translateX(0);
     text-align: left;
@@ -846,5 +856,67 @@ body {
   .btn__container {
     justify-content: flex-start;
     gap: 1.5rem;
+  }
+
+  .h2,
+  .h4 {
+    font-size: min(3vw, 2.2rem) !important;
+  }
+
+  .features__intro .p__gray {
+    width: 40%;
+    text-align: center;
+  }
+
+  .section__options {
+    flex-direction: row;
+    padding-inline: 20%;
+  }
+
+  .off,
+  .on {
+    border-block-start: 0px;
+  }
+
+  .on::after {
+    width: 100%;
+  }
+
+  .off {
+    border-block-end: 1px solid var(--btn-color);
+  }
+
+  .section__txt {
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+
+  .section__pic img {
+    margin-inline-start: 20%;
+    margin-inline-end: 0;
+  }
+
+  .section__pic {
+    height: min(90vh, 420px);
+  }
+
+  .section__pic::after {
+    width: 70%;
+  }
+
+  .section__card .p__gray {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .section__txt .p__gray,
+  .section__txt .h4 {
+    text-align: left;
+    width: 67%;
+    margin-inline-end: min(10%, 8rem);
+  }
+
+  .section__txt .section__card {
+    align-items: flex-end;
   }
 }

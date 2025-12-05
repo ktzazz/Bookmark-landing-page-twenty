@@ -756,7 +756,7 @@ body {
 
 @media (min-width: 60em) {
   .header__content {
-    padding-inline: 10%;
+    padding-inline: 10vw;
   }
 
   .nav__mobile {
@@ -832,7 +832,7 @@ body {
 
   .main__txt {
     text-align: left;
-    margin-inline-start: 10%;
+    margin-inline-start: 10vw;
     margin-block-start: 5%;
     width: min(70%, 55rem);
   }
@@ -844,6 +844,7 @@ body {
 
   .p__gray {
     font-size: min(1.5vw, 1.2rem);
+    width: 100%;
   }
 
   .main__txt .p__gray {
@@ -889,15 +890,20 @@ body {
   .section__txt {
     flex-direction: row-reverse;
     gap: 0;
+    justify-content: flex-end;
   }
 
   .section__pic img {
-    margin-inline-start: 20%;
-    margin-inline-end: 0;
+    display: flex;
+    margin-inline-start: 10vw;
+    margin-inline-end: auto;
+    width: auto;
+    height: auto;
   }
 
   .section__pic {
     height: min(90vh, 420px);
+    width: min(60vw, 50rem);
   }
 
   .section__pic::after {
@@ -905,18 +911,22 @@ body {
   }
 
   .section__card .p__gray {
-    left: 0;
+    left: auto;
     transform: translateX(0);
   }
 
   .section__txt .p__gray,
   .section__txt .h4 {
     text-align: left;
-    width: 67%;
-    margin-inline-end: min(10%, 8rem);
   }
 
   .section__txt .section__card {
-    align-items: flex-end;
+    align-items: flex-start;
+    width: 30rem;
+  }
+
+  .section__txt .main__btn {
+    display: block;
+    align-self: flex-start;
   }
 }

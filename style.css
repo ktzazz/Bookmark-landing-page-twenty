@@ -1014,3 +1014,18 @@ body {
     margin-inline: 10% 3%;
   }
 }
+
+@media (min-width: 100em) {
+  .section__pic img {
+    width: 75%;
+  }
+
+  .section__pic {
+    height: min(90vh, 565px);
+    width: min(60vw, 55rem);
+  }
+
+  .section__txt {
+    gap: 13%;
+  }
+}

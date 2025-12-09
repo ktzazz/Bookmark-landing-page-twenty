@@ -33,18 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
     logoColor();
   }
 
+  const logo = document.querySelector(".bookmark");
+  const circle = document.querySelector(".circle");
+  const inner = document.querySelector(".innerCircle");
+
+  const rootStyles = getComputedStyle(document.documentElement);
+  const logoOg = rootStyles.getPropertyValue("--blue-950");
+  const circleOg = rootStyles.getPropertyValue("--blue");
+  const innerOg = rootStyles.getPropertyValue("--white");
+  const lightGray = rootStyles.getPropertyValue("--grey");
+  const bgMenu = rootStyles.getPropertyValue("--background-menu");
+
   function logoColor() {
-    const logo = document.querySelector(".bookmark");
-    const circle = document.querySelector(".circle");
-    const inner = document.querySelector(".innerCircle");
-
-    const rootStyles = getComputedStyle(document.documentElement);
-    const logoOg = rootStyles.getPropertyValue("--blue-950");
-    const circleOg = rootStyles.getPropertyValue("--blue");
-    const innerOg = rootStyles.getPropertyValue("--white");
-    const lightGray = rootStyles.getPropertyValue("--grey");
-    const bgMenu = rootStyles.getPropertyValue("--background-menu");
-
     if (mobileMenu.classList.contains("open")) {
       logo.style.fill = lightGray;
       circle.style.fill = lightGray;
@@ -90,22 +90,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorIcon = document.querySelector(".icon__error");
   const errorMsg = document.querySelector(".error__div");
   const contactBtn = document.querySelector("#contact__btn");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   contactBtn.addEventListener("submit", validateEmail);
 
   function validateEmail(event) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!emailRegex.test(emailInput.value)) {
-      emailDiv.classList.add("error__state");
-      errorIcon.classList.remove("inactive");
-      errorMsg.classList.remove("inactive");
+      showErrorState();
       event.preventDefault();
     } else {
-      emailDiv.classList.remove("error__state");
-      errorIcon.classList.add("inactive");
-      errorMsg.classList.add("inactive");
+      hideErrorState();
     }
+  }
+
+  emailInput.addEventListener("input", () => {
+    if (emailRegex.test(emailInput.value)) {
+      hideErrorState();
+    }
+  });
+
+  function showErrorState() {
+    emailDiv.classList.add("error__state");
+    errorIcon.classList.remove("inactive");
+    errorMsg.classList.remove("inactive");
+  }
+
+  function hideErrorState() {
+    emailDiv.classList.remove("error__state");
+    errorIcon.classList.add("inactive");
+    errorMsg.classList.add("inactive");
   }
 
   // features options
